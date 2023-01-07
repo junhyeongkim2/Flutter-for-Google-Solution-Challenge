@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,10 +18,28 @@ class MyApp extends StatelessWidget {
 }
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Center(child: Text('hello HomePage')));
+    return Scaffold(
+        appBar: AppBar(
+          leading: IconButton(
+            icon: Icon(CupertinoIcons.camera, color: Colors.black),
+            onPressed: () {},
+          ),
+          actions: [
+            IconButton(
+              icon: Icon(CupertinoIcons.paperplane, color: Colors.black),
+              onPressed: () {},
+            ),
+          ],
+          title: Image.asset(
+            'assets/logo.png',
+            height: 32,
+          ),
+          centerTitle: true,
+        ),
+        body: Center(child: Text('hello HomePage')));
   }
 }
