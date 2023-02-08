@@ -65,12 +65,13 @@ class _HomePageState extends State<HomePage> {
             ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
-        onPressed: () {
+        onPressed: () async {
           // + 버튼 클릭시 버킷 생성 페이지로 이동
-          Navigator.push(
+          String? job = await Navigator.push(
             context,
             MaterialPageRoute(builder: (_) => CreatePage()),
           );
+          print(job);
         },
       ),
     );
@@ -141,6 +142,7 @@ class _CreatePageState extends State<CreatePage> {
                     setState(() {
                       error = null;
                     });
+                    Navigator.pop(context, job);
                   }
                 },
               ),
