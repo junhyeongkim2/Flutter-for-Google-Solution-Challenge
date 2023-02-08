@@ -65,6 +65,14 @@ class _HomePageState extends State<HomePage> {
                     icon: Icon(CupertinoIcons.delete),
                     onPressed: () {
                       // 삭제 버튼 클릭시
+                      showDialog(
+                        context: context,
+                        builder: (context) {
+                          return AlertDialog(
+                            title: Text("정말로 삭제하시겠습니까?"),
+                          );
+                        },
+                      );
                       print('$bucket : 삭제하기');
                     },
                   ),
