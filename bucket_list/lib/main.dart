@@ -71,7 +71,11 @@ class _HomePageState extends State<HomePage> {
             context,
             MaterialPageRoute(builder: (_) => CreatePage()),
           );
-          print(job);
+          if (job != null) {
+            setState(() {
+              bucketList.add(job);
+            });
+          }
         },
       ),
     );
