@@ -79,6 +79,8 @@ class HomePage extends StatelessWidget {
                       ),
                       onTap: () {
                         // 아이템 클릭시
+                        bucket.isDone = !bucket.isDone;
+                        bucketService.updateBucket(bucket, index);
                       },
                     );
                   },
