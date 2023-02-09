@@ -17,6 +17,12 @@ class BucketService extends ChangeNotifier {
     bucketList[index] = bucket;
     notifyListeners();
   }
+
+  /// bucket 삭제
+  void deleteBucket(int index) {
+    bucketList.removeAt(index);
+    notifyListeners();
+  }
 }
 
 /// bucket 추가
